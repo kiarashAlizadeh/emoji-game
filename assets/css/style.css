@@ -15,6 +15,17 @@ body {
   min-height: 100vh;
   background: #12a6dd;
 }
+
+@media only screen and(max-device-width: 480px) {
+  body{
+    min-height: auto;
+    padding: 10px;
+  }
+  .container{
+    width: 300px;
+  }
+
+}
 .container {
   position: relative;
   display: flex;
