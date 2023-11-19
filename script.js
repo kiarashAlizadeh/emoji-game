@@ -39,7 +39,7 @@ for (var i = 0; i < emojis.length; i++) {
           document.querySelectorAll('.boxOpen')[0].classList.remove('boxOpen');
 
           if (document.querySelectorAll('.boxMatch').length == emojis.length) {
-            alert('you have won!🎆');
+            alert('You have won the game!🎆');
           }
         } else {
           document.querySelectorAll('.boxOpen')[1].classList.remove('boxOpen');
@@ -50,3 +50,16 @@ for (var i = 0; i < emojis.length; i++) {
   };
   document.querySelector('.game').appendChild(box);
 }
+
+setTimeout(function () {
+  var boxes = document.querySelectorAll('.item');
+  boxes.forEach(function (box) {
+    box.classList.add('boxOpen');
+  });
+
+  setTimeout(function () {
+    boxes.forEach(function (box) {
+      box.classList.remove('boxOpen');
+    });
+  }, 2000);
+}, 500);
