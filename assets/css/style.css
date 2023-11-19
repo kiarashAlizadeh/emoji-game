@@ -1,13 +1,10 @@
-/* @font-face {
-  font-family: iransnas;
-  src :url(fonts)
-} */
+/* reset code */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: iransnas; */
 }
+
 body {
   display: flex;
   justify-content: center;
@@ -16,16 +13,7 @@ body {
   background: #12a6dd;
 }
 
-@media only screen and(max-device-width: 480px) {
-  body{
-    min-height: auto;
-    padding: 10px;
-  }
-  .container{
-    width: 300px;
-  }
-
-}
+/* game section */
 .container {
   position: relative;
   display: flex;
@@ -48,9 +36,11 @@ body {
   width: fit-content;
   user-select: none;
 }
+
 .title img {
   width: 75px;
 }
+
 .reset {
   padding: 7px 35px;
   color: #9cc83c;
@@ -61,10 +51,12 @@ body {
   font-weight: 600;
   border-radius: 10px;
 }
+
 .reset:hover {
   color: #fff;
   background: rgb(24, 104, 82);
 }
+
 .reset:focus {
   color: #fff;
   background: rgb(42, 182, 145);
@@ -80,6 +72,7 @@ body {
   transform-style: preserve-3d;
   perspective: 500px;
 }
+
 .item {
   position: relative;
   width: 65px;
@@ -94,6 +87,7 @@ body {
   transform: rotateY(180deg);
   cursor: pointer;
 }
+
 .item::after {
   content: '';
   position: absolute;
@@ -103,13 +97,45 @@ body {
   transform: rotateY(0deg);
   backface-visibility: hidden;
 }
+
 .item.boxOpen {
   transform: rotateY(0deg);
 }
+
 .boxOpen::after {
   transform: rotateY(180deg);
 }
+
 .boxOpen::after,
 .boxMatch::after {
   transform: rotateY(180deg);
+}
+
+/* responsive */
+@media only screen and (max-device-width: 480px) {
+  body {
+    max-height: 100vh;
+    padding: 20px 15px !important;
+  }
+
+  .container {
+    width: 300px;
+    border-radius: 25px !important;
+    padding: 20px 30px !important;
+  }
+
+  .title img {
+    width: 50px;
+  }
+
+  .item {
+    position: relative;
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 10px !important;
+  }
+
+  .item::after {
+    border-radius: 10px !important;
+  }
 }
